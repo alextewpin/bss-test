@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-const AssetsPlugin = require('assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 
@@ -11,7 +10,7 @@ module.exports = {
   entry: ['./src'],
   output: {
     path: './build',
-    filename: 'script.js'
+    filename: 'main.js'
   },
   resolve: {
     modulesDirectories: ['node_modules', 'src/components'],
@@ -56,10 +55,6 @@ if (NODE_ENV === 'production') {
         drop_console: true,
         unsafe: true
       }
-    }),
-    new AssetsPlugin({
-      filename: 'assets.json',
-      path: __dirname + '/build'
     })
   );
 }
