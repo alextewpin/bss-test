@@ -1,0 +1,23 @@
+{
+  "extends": "defaults/configurations/airbnb/es6-react",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "React": true,
+    "ReactDOM": true,
+    "bem": true
+  },
+  "rules": {
+    "max-len":                             [2, 120],
+    "arrow-body-style":                    0,
+    "prefer-template":                     0,
+    "no-console":                          0,
+    "comma-dangle":                        [2, "never"],
+    "space-before-function-paren":         [2, "always"],
+    "jsx-quotes":                          [2, "prefer-single"],
+    "react/jsx-no-bind":                   [2, {"ignoreRefs": true}],
+    "react/jsx-closing-bracket-location":  [2, "after-props"]
+  }
+}

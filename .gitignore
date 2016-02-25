@@ -1,0 +1,7 @@
+node_modules
+public
+.vscode
+*.log
+
+### OSX ###
+.DS_Store
