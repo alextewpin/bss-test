@@ -1,5 +1,5 @@
 require('./index.html');
-require('./styles/main.scss');
+require('_styles/common.scss');
 
 import App from './App';
 ReactDOM.render(

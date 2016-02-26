@@ -1,0 +1,17 @@
+@import "constants.scss";
+
+* {
+  outline: none;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: $pl__white;
+  color: $pl__black;
+  overflow-x: auto;
+  font-family: $font__family;
+  font-size: $font__size_m;
+  line-height: $font__line-height;
+}

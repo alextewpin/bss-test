@@ -3,8 +3,18 @@ $g__column: 60px;
 $g__gutter: 20px;
 $g__margin: 10px;
 
-@mixin g__width($columns) {
-  width: $g__column * $columns - $g__gutter * ($columns - 1);
+@function g__width($columns) {
+  @return $g__column * $columns + $g__gutter * ($columns - 1);
+}
+
+// Fonts
+$font__family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font__size_m: 14px;
+$font__line-height: 1.5em;
+
+@mixin font__style_p {
+  font-size: 16px;
+  font-weight: 100;
 }
 
 // Palette
@@ -12,3 +22,6 @@ $pl__primary: #6F948A;
 $pl__secondary: #877863;
 $pl__darkest: #40434A;
 $pl__lightest: #F2F2E9;
+
+$pl__black: #000;
+$pl__white: #fff;

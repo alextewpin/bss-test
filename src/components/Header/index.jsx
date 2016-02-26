@@ -2,9 +2,9 @@ import styles from './header.scss';
 
 function Header ({ userFirstName, userLastName, userPhoto, nextPayment }) {
   return (
-    <div>
-      <div>
-        <div>
+    <div styleName='root'>
+      <div styleName='user'>
+        <div styleName='photo'>
           {userPhoto}
         </div>
         <div>

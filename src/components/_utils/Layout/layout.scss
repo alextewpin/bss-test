@@ -1,3 +1,7 @@
+@import "~_styles/constants.scss";
+
 .root {
-  background-color: wheat;
+  max-width: g__width(12);
+  padding: 0px $g__margin;
+  margin: 48px auto 0px auto;
 }

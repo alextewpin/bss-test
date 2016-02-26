@@ -1,10 +1,20 @@
 @import "~_styles/constants.scss";
 
-@mixin test {
-  background-color: $pl__primary;
+.root {
+  @include font__style_p;
+  display: flex;
+  justify-content: space-between;
 }
 
-.mega-test {
-  @include test;
-  color: white;
+.user {
+  display: flex;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  margin-right: $g__gutter;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid #D8D8D8;
 }
