@@ -1,0 +1,10 @@
+@import "~_styles/constants.scss";
+
+@mixin test {
+  background-color: $pl__primary;
+}
+
+.mega-test {
+  @include test;
+  color: white;
+}

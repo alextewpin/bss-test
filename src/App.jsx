@@ -9,17 +9,20 @@ import Deposits          from 'Deposits';
 import AccountStatement  from 'AccountStatement';
 import UpcomingPayments  from 'UpcomingPayments';
 
-import PromoFirs         from 'promo/Firs';
+import PromoFirs         from '_promo/Firs';
 
-import Row               from 'utils/Row';
-import Column            from 'utils/Column';
+import Layout            from '_utils/Layout';
+import Row               from '_utils/Row';
+import Column            from '_utils/Column';
 
 export default class App extends React.Component {
   render () {
     return (
-      <div>
+      <Layout>
         <Header
-          userName='Александр Олегович Тюпин'
+          userFirstName='Александр'
+          userMiddleName='Олегович'
+          userLastName='Тюпин'
           userPhoto=''
           nextPayment='Не забыть заплатить за садик'/>
         <Nav
@@ -134,7 +137,7 @@ export default class App extends React.Component {
               }
             ]}/>
         </Row>
-      </div>
+      </Layout>
     );
   }
 }

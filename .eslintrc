@@ -7,10 +7,11 @@
   "globals": {
     "React": true,
     "ReactDOM": true,
-    "bem": true
+    "ReactCSS": true
   },
   "rules": {
     "max-len":                             [2, 120],
+    "new-cap":                             0,
     "arrow-body-style":                    0,
     "prefer-template":                     0,
     "no-console":                          0,

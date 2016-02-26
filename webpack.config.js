@@ -27,7 +27,8 @@ module.exports = {
       }
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('css!postcss!sass')
+      loader: ExtractTextPlugin.extract(
+        'css?modules&importLoaders=1&localIdentName=[name]__[local]!postcss!sass')
     }, {
       test: /\.html$/,
       loader: 'file?name=[name].[ext]'
@@ -40,7 +41,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       React: 'react',
       ReactDOM: 'react-dom',
-      bem: 'bem-cn'
+      ReactCSS: 'react-css-modules'
     }),
     new ExtractTextPlugin('main.css')
   ]
