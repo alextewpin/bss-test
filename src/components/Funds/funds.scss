@@ -1,0 +1,49 @@
+@import "~_styles/constants.scss";
+
+.root {
+  width: g__width(6);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  @include font__style_h3;
+  margin-right: g(4);
+}
+
+.refresh {
+  @include font__style_note;
+  display: flex;
+  align-items: center;
+  color: $pl__primary;
+  text-decoration: underline;
+}
+
+.refresh-icon {
+  width: 14px;
+  height: 13px;
+  margin-left: g();
+  background-image: url("./spinner.png");
+  background-size: 100%;
+}
+
+.funds {
+  margin-top: g(4);
+}
+
+.funds-whole, .currency {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: $font__lh;
+  color: $pl__grey_d3;
+}
+
+.funds-fractional {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: $font__lh;
+  color: $pl__grey_d3;
+}

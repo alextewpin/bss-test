@@ -1,0 +1,9 @@
+@import "~_styles/constants.scss";
+
+.root {
+  display: flex;
+  margin: g(10) $g__margin;
+  &>*:not(:last-child) {
+    margin-right: $g__gutter;
+  }
+}

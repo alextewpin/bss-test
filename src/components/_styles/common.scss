@@ -8,10 +8,17 @@
 }
 
 body {
+  @include font__style_body;
   background-color: $pl__white;
   color: $pl__black;
   overflow-x: auto;
-  font-family: $font__family;
-  font-size: $font__size_m;
-  line-height: $font__line-height;
+}
+
+a {
+  text-decoration: none;
+  color: $pl__black;
+}
+
+input {
+  @include font__style_body;
 }

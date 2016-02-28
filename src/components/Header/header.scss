@@ -1,13 +1,15 @@
 @import "~_styles/constants.scss";
 
 .root {
-  @include font__style_p;
   display: flex;
   justify-content: space-between;
+  padding: 0px $g__margin $g__5 $g__margin;
+  border-bottom: 1px solid $pl__grey;
 }
 
 .user {
   display: flex;
+  width: g__width(10);
 }
 
 .photo {
@@ -16,5 +18,71 @@
   margin-right: $g__gutter;
   box-sizing: border-box;
   border-radius: 50%;
-  border: 1px solid #D8D8D8;
+  border: 1px solid $pl__grey;
+}
+
+.username {
+  @include font__style_h4;
+}
+
+.next-payment {
+  display: block;
+  margin-top: $g__2;
+  color: $pl__secondary;
+  text-decoration: underline;
+}
+
+.help {
+  margin-top: $g__3;
+  display: flex;
+}
+
+.help-icon {
+  user-select: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: #F2CD30;
+  color: $pl__white;
+  margin-right: $g;
+  //
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.help-text {
+  @include font__style_note;
+}
+
+.logo {
+  width: g__width(2);
+}
+
+.logo-image {
+  user-select: none;
+  height: 70px;
+  width: 72px;
+  margin: 0px auto;
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 70px;
+  text-align: center;
+  color: $pl__white;
+  background-image: linear-gradient(-270deg, #FF0057 0%, #F5134E 100%);
+  box-shadow: 0px 0px 6px 0px rgba(120, 120, 120, 0.50);
+  border-radius: $g__3;
+}
+
+.exit {
+  @include font__style_small-note;
+  margin-top: $g__3;
+  text-align: center;
+}
+
+.exit-counter {
+  @include font__style_small-note;
+  font-weight: 400;
+  text-align: center;
 }

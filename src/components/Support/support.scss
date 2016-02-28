@@ -1,0 +1,43 @@
+@import "~_styles/constants.scss";
+
+.root {
+  display: flex;
+  width: g__width(6);
+  padding-top: g(10);
+}
+
+.item {
+  width: g__width(2);
+  &:not(:last-child) {
+    margin-right: $g__gutter;
+  }
+}
+
+.item-icon {
+  position: relative;
+  width: g(10);
+  height: g(10);
+  border-radius: 50%;
+  margin: 0px auto;
+  background-color: $pl__primary;
+}
+
+.item-title {
+  @include font__style_note;
+  margin-top: g(2);
+  text-align: center;
+}
+
+.item-notification {
+  @include font__style_small-note;
+  position: absolute;
+  top: -(g());
+  right: -(g());
+  height: g(5);
+  width: g(5);
+  line-height: g(5);
+  text-align: center;
+  color: $pl__white;
+  border-radius: 50%;
+  background-color: red;
+}

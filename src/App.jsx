@@ -30,7 +30,8 @@ export default class App extends React.Component {
         <Transfer/>
         <Row>
           <Funds
-            funds={134651123}
+            fundsWhole={1346511}
+            fundsFractional={23}
             currency='rub'/>
           <Support
             newMessages={2}/>

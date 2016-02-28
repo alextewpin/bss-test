@@ -1,0 +1,14 @@
+@import "~_styles/constants.scss";
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding: $g__5 $g__margin;
+}
+
+.item {
+  padding: $g__2 $g__5;
+  &:hover {
+    background-color: $pl__grey;;
+  }
+}

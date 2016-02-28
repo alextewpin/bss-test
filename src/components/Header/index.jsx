@@ -8,19 +8,19 @@ function Header ({ userFirstName, userLastName, userPhoto, nextPayment }) {
           {userPhoto}
         </div>
         <div>
-          <div>{userFirstName}</div>
-          <div>{userLastName}</div>
-          <div>{nextPayment}</div>
-          <div>
-            <div>?</div>
-            <div>Помощь по интернет-банку</div>
+          <div styleName='username'>{userFirstName}</div>
+          <div styleName='username'>{userLastName}</div>
+          <a href='#' styleName='next-payment'>{nextPayment}</a>
+          <div styleName='help'>
+            <div styleName='help-icon'>?</div>
+            <div styleName='help-text'>Помощь по интернет-банку</div>
           </div>
         </div>
       </div>
-      <div>
-        <div>Q</div>
-        <div>Завершение сессии</div>
-        <div>2:00</div>
+      <div styleName='logo'>
+        <div styleName='logo-image'>Q</div>
+        <div styleName='exit'>Завершение сессии</div>
+        <div styleName='exit-counter'>2:00</div>
       </div>
     </div>
   );

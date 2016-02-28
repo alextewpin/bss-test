@@ -1,7 +1,6 @@
 @import "~_styles/constants.scss";
 
 .root {
-  max-width: g__width(12);
-  padding: 0px $g__margin;
+  width: g__width(12) + 2 * $g__margin;
   margin: 48px auto 0px auto;
 }

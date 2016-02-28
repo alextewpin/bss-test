@@ -32,6 +32,9 @@ module.exports = {
     }, {
       test: /\.html$/,
       loader: 'file?name=[name].[ext]'
+    }, {
+      test: /\.(png|jpg|svg)$/,
+      loader: 'file?name=[name].[ext]'
     }]
   },
   watch: isDev(),
