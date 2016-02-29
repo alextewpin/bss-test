@@ -3,11 +3,11 @@
 .root {
   display: flex;
   justify-content: space-between;
-  padding: $g__5 $g__margin;
+  padding: g(5) $g__margin;
 }
 
 .item {
-  padding: $g__2 $g__5;
+  padding: g(2) g(5);
   &:hover {
     background-color: $pl__grey;;
   }

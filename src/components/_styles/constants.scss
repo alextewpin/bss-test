@@ -1,25 +1,10 @@
 // Grid
-$g: 4px;
-$g__2: 2 * $g;
-$g__3: 3 * $g;
-$g__4: 4 * $g;
-$g__5: 5 * $g;
-$g__6: 6 * $g;
-$g__7: 7 * $g;
-$g__8: 8 * $g;
-$g__9: 9 * $g;
-$g__10: 10 * $g;
-$g__20: 20 * $g;
-$g__30: 30 * $g;
-$g__40: 40 * $g;
-$g__50: 50 * $g;
-
 $g__column: 60px;
 $g__gutter: 20px;
 $g__margin: 10px;
 
 @function g($times: 1) {
-  @return $times * $g;
+  @return $times * 4px;
 }
 
 @function g__width($columns) {

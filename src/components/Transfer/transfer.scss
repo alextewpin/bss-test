@@ -1,10 +1,10 @@
 @import "~_styles/constants.scss";
 
 .root {
-  margin: $g__5 $g__margin $g__10 $g__margin;
-  padding: 0px $g__4;
+  margin: g(5) $g__margin g(10) $g__margin;
+  padding: 0px g(4);
   background-color: $pl__primary;
-  border-radius: $g__2;
+  border-radius: g(2);
   display: flex;
   align-items: center;
   box-shadow: 0px 0px 2px 0px rgba(151,151,151,0.50);
@@ -12,8 +12,8 @@
 
 .input {
   display: flex;
-  height: $g__10;
-  padding: $g__4 0px;
+  height: g(10);
+  padding: g(4) 0px;
   flex-basis: 50%;
   position: relative;
 }
@@ -21,15 +21,15 @@
 .input-from, .input-to {
   width: 100%;
   border-radius: 5px;
-  padding-left: $g__4;
+  padding-left: g(4);
 }
 
 .input-from {
-  padding-right: $g__4 + $g__4 + $g__4;
+  padding-right: g(4) + g(4) + g(4);
 }
 
 .input-to {
-  padding-right: $g__4 + (2 * $g__4) + $g__3 + $g__4;
+  padding-right: g(4) + (2 * g(4)) + g(3) + g(4);
 }
 
 .separator, .submit {
@@ -40,20 +40,20 @@
 .separator {
   background-image: url("./separator.png");
   background-size: 100%;
-  margin-left: $g__4;
-  margin-right: $g__5;
+  margin-left: g(4);
+  margin-right: g(5);
   width: 22px;
-  height: $g__10 + (2 * $g__4);
+  height: g(10) + (2 * g(4));
 }
 
 .icons-from, .icons-to {
-  bottom: 10px + $g__4;
-  right: $g__4;
+  bottom: 10px + g(4);
+  right: g(4);
   position: absolute;
   display: flex;
   align-items: flex-end;
   &>:not(:last-child) {
-    margin-right: $g__3;
+    margin-right: g(3);
   }
 }
 
@@ -63,12 +63,12 @@
 }
 
 .icon-more {
-  width: $g__4;
-  height: $g__5;
+  width: g(4);
+  height: g(5);
   color: $pl__primary;
   font-size: 20px;
   font-weight: 500;
-  line-height: $g__5;
+  line-height: g(5);
 }
 
 .icon-mic {
@@ -82,7 +82,7 @@
 .submit {
   width: 15px;
   height: 26px;
-  margin: 0px $g 0px $g__5;
+  margin: 0px g() 0px g(5);
   background-image: url("./submit.png");
   background-size: 100%;
 }
