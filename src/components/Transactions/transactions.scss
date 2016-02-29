@@ -1,0 +1,9 @@
+@import "~_styles/constants.scss";
+
+.root {
+  width: g__width(6);
+}
+
+.title {
+  @include font__style_h3;
+}

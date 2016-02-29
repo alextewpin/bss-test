@@ -1,0 +1,8 @@
+@import "~_styles/constants.scss";
+
+.root {
+  margin-top: g(22);
+  width: 100%;
+  height: g(5);
+  background-color: $pl__primary;
+}

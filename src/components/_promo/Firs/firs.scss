@@ -1,0 +1,44 @@
+@import "~_styles/constants.scss";
+
+.root {
+  width: g__width(5);
+  padding-right: g__width(1) + $g__gutter;
+}
+
+.banner {
+  border-radius: g(2);
+  background-color: $pl__grey_l;
+  padding: g(10) g(8) g(15) g(8);
+}
+
+.title {
+  @include font__style_h3;
+}
+
+.income {
+  font-size: 44px;
+  line-height: $font__lh;
+  margin-top: g(5);
+  margin-bottom: g(8);
+}
+
+.income-currency {
+  font-weight: 400;
+}
+
+.p {
+  margin-top: g(7);
+  line-height: 1.5em;
+}
+
+.strong {
+  font-weight: 400;
+}
+
+.signup {
+  @include font__style_h4;
+  text-decoration: underline;
+  margin-top: g(10);
+  display: block;
+  color: $pl__primary;
+}

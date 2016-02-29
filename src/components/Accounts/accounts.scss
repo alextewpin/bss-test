@@ -1,0 +1,12 @@
+@import "~_styles/constants.scss";
+
+.root {
+  width: g__width(6);
+  &:not(:first-child) {
+    margin-top: g(10);
+  }
+}
+
+.title {
+  @include font__style_h3;
+}

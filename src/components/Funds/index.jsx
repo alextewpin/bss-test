@@ -1,14 +1,8 @@
+import { formatCurrency, getCurrencySymbol } from '_utils/common';
+
 import styles from './funds.scss';
 
 function Funds ({ fundsWhole, fundsFractional, currency }) {
-  let currencySymbol = '';
-  switch (currency.toLowerCase()) {
-    case 'rub':
-      currencySymbol = '₽';
-      break;
-    default:
-      currencySymbol = currency;
-  }
   return (
     <div styleName='root'>
       <div styleName='header'>
@@ -19,9 +13,9 @@ function Funds ({ fundsWhole, fundsFractional, currency }) {
         </a>
       </div>
       <div styleName='funds'>
-        <span styleName='funds-whole'>{fundsWhole.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')}.</span>
+        <span styleName='funds-whole'>{formatCurrency(fundsWhole)}.</span>
         <span styleName='funds-fractional'>{fundsFractional}</span>
-        <span styleName='currency'>&nbsp;{currencySymbol}</span>
+        <span styleName='currency'>&nbsp;{getCurrencySymbol(currency)}</span>
       </div>
     </div>
   );

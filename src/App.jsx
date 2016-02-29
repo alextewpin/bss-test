@@ -1,19 +1,16 @@
-import Header            from 'Header';
-import Nav               from 'Nav';
-import Transfer          from 'Transfer';
-import Funds             from 'Funds';
-import Support           from 'Support';
-import Accounts          from 'Accounts';
-import Cards             from 'Cards';
-import Deposits          from 'Deposits';
-import AccountStatement  from 'AccountStatement';
-import UpcomingPayments  from 'UpcomingPayments';
+import Header        from 'Header';
+import Nav           from 'Nav';
+import Transfer      from 'Transfer';
+import Funds         from 'Funds';
+import Support       from 'Support';
+import Accounts      from 'Accounts';
+import Transactions  from 'Transactions';
+import Footer        from 'Footer';
 
-import PromoFirs         from '_promo/Firs';
+import PromoFirs     from '_promo/Firs';
 
-import Layout            from '_utils/Layout';
-import Row               from '_utils/Row';
-import Column            from '_utils/Column';
+import Layout        from '_utils/Layout';
+import Row           from '_utils/Row';
 
 export default class App extends React.Component {
   render () {
@@ -38,55 +35,64 @@ export default class App extends React.Component {
         </Row>
         <Row>
           <PromoFirs/>
-          <Column>
+          <div>
             <Accounts
+              title='Счета'
               items={[
                 {
                   title: 'Основной счет',
                   funds: 432780,
-                  currency: 'rub'
+                  currency: 'rub',
+                  accountFirstDigits: '40817',
+                  accountLastDigits: '04960'
                 },
                 {
                   title: 'Счет в долларах',
                   funds: 600,
-                  currency: 'usd'
+                  currency: 'usd',
+                  accountFirstDigits: '40817',
+                  accountLastDigits: '04961'
                 }
               ]}/>
-            <Cards
+            <Accounts
+              title='Карты'
               items={[
                 {
                   title: 'Любимая карта',
-                  type: 'Visa Gold',
                   funds: 150000,
                   currency: 'rub',
-                  lastDigits: 4401
+                  cardType: 'Visa Gold',
+                  cardLastDigits: '4401'
                 },
                 {
                   title: 'Кредитная карта',
-                  type: 'Master Card',
                   funds: 60000,
                   currency: 'usd',
-                  lastDigits: 4960,
-                  lastOperation: {
+                  cardType: 'Master Card',
+                  cardLastDigits: '4960',
+                  cardLastOperation: {
                     amount: 1200,
                     currency: 'rub',
                     date: '2015-11-27'
                   }
                 }
               ]}/>
-            <Deposits
+            <Accounts
+              title='Вклады'
               items={[
                 {
-                  title: '',
+                  title: 'Большой дом',
                   funds: 550000,
-                  description: '11% годовых',
-                  date: '2023-12-27'
+                  currency: 'rub',
+                  depositDescription: '11% годовых',
+                  depositDate: '2023-12-27'
                 }
               ]}/>
-          </Column>
+          </div>
         </Row>
-        <Row>
-          <AccountStatement
+        <Row margin='l'>
+          <Transactions
+            title='Последние операции'
             items={[
               {
                 title: 'Настин садик',
@@ -113,7 +119,8 @@ export default class App extends React.Component {
                 currency: 'rub'
               }
             ]}/>
-          <UpcomingPayments
+          <Transactions
+            title='Предстоящие платежи'
             items={[
               {
                 title: 'Настин садик',
@@ -138,6 +145,7 @@ export default class App extends React.Component {
               }
             ]}/>
         </Row>
+        <Footer/>
       </Layout>
     );
   }
