@@ -13,13 +13,17 @@
   }
 }
 
-.item-icon {
+.item-icon-bg {
   position: relative;
   width: g(10);
   height: g(10);
   border-radius: 50%;
   margin: 0px auto;
   background-color: $pl__primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $pl__white;
 }
 
 .item-title {
