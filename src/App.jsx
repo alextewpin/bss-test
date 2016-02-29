@@ -141,7 +141,7 @@ export default class App extends React.Component {
               },
               {
                 title: 'Занятия по английскому',
-                action: 'Заплатить',
+                action: 'Перевести',
                 date: '2015-11-14',
                 amount: 1800,
                 currency: 'rub'
