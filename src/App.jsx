@@ -93,6 +93,8 @@ export default class App extends React.Component {
         <Row margin='l'>
           <Transactions
             title='Последние операции'
+            type='last'
+            width='compact'
             items={[
               {
                 title: 'Настин садик',
@@ -108,19 +110,20 @@ export default class App extends React.Component {
               },
               {
                 title: 'Пополнение карты\nVisa Classic *3445',
-                date: '2015-11-19T10:11:31',
+                date: '2015-11-17T10:11:31',
                 amount: 400000,
                 currency: 'rub'
               },
               {
                 title: 'ООО «Штормовое предупреждение»',
-                date: '2015-11-19T13:09:12',
+                date: '2015-11-16T13:09:12',
                 amount: -7500,
                 currency: 'rub'
               }
             ]}/>
           <Transactions
             title='Предстоящие платежи'
+            type='upcoming'
             items={[
               {
                 title: 'Настин садик',

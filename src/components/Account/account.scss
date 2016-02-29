@@ -9,25 +9,22 @@
 }
 
 .title {
-  @include font__style_h4;
+  @include font__style_h3;
   flex-shrink: 0;
   line-height: g(6);
 }
 
 .dots {
-  width: 100%;
-  background-image: linear-gradient(to right, $pl__grey_d 16.666666%, transparent 0%);
+  @include dots;
   background-position: 0px 17px;
-  background-size: 6px 1px;
-  background-repeat: repeat-x;
   line-height: g(6);
-  margin: 0px g(2);
 }
 
 .funds {
   @include font__style_h3;
   flex-shrink: 0;
   line-height: g(6);
+  font-weight: 400;
 }
 
 .additional {

@@ -29,6 +29,7 @@ $g__margin: 10px;
 // Palette
 $pl__primary: #159AF3;
 $pl__secondary: #3EDE02;
+$pl__tetriary: #FA0852;
 
 $pl__grey_d4: #272727;
 $pl__grey_d3: #4A4A4A;
@@ -50,9 +51,14 @@ $font__lh: 1.2em;
   color: $pl__grey_d4;
 }
 
+@mixin font__style_h2 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: $font__lh;
+}
+
 @mixin font__style_h3 {
   font-size: 20px;
-  font-weight: 400;
   line-height: $font__lh;
 }
 
@@ -72,9 +78,11 @@ $font__lh: 1.2em;
   line-height: $font__lh;
 }
 
-// h1 64
-// h2 48
-// h3 22
-// h4 20
-// h5 18
-// h6 16 bold
+// Other
+@mixin dots {
+  background-image: linear-gradient(to right, $pl__grey_d 16.666666%, transparent 0%);
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+  width: 100%;
+  margin: 0px g(2);
+}

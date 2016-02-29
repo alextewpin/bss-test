@@ -19,6 +19,8 @@
   box-sizing: border-box;
   border-radius: 50%;
   border: 1px solid $pl__grey;
+  background-image: url('./me.jpg');
+  background-size: 100%;
 }
 
 .username {

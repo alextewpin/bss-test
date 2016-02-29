@@ -2,13 +2,13 @@ import Transaction from 'Transaction';
 
 import styles from './transactions.scss';
 
-function Transactions ({ title, items }) {
+function Transactions ({ title, items, type, width = 'full' }) {
   return (
-    <div styleName='root'>
+    <div styleName={`root_width_${width}`}>
       <div styleName='title'>{title}</div>
       <div>
         {items.map((item, i) => {
-          return <Transaction key={i} {...item}/>;
+          return <Transaction key={i} {...item} type={type}/>;
         })}
       </div>
     </div>

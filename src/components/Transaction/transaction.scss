@@ -3,3 +3,44 @@
 .root {
   margin-top: g(6);
 }
+
+.general {
+  @include font__style_h4;
+  display: flex;
+}
+
+.title {
+  flex-shrink: 0;
+  line-height: g(6);
+}
+
+.dots {
+  @include dots;
+  background-position: 0px 17px;
+  line-height: g(6);
+}
+
+%amount {
+  flex-shrink: 0;
+  line-height: g(6);
+}
+
+.amount_style_ {
+  &plus {
+    @extend %amount;
+    color: $pl__secondary;
+  }
+  &minus {
+    @extend %amount;
+    color: $pl__tetriary;
+  }
+  &upcoming {
+    @extend %amount;
+    color: $pl__primary;
+  }
+}
+
+.additional {
+  margin-top: g();
+  font-weight: 100;
+}

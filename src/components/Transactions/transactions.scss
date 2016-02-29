@@ -1,9 +1,15 @@
 @import "~_styles/constants.scss";
 
-.root {
+.root_width_full {
   width: g__width(6);
+}
+
+.root_width_compact {
+  width: g__width(5);
+  padding-right: g__width(1) + $g__gutter;
 }
 
 .title {
   @include font__style_h3;
+  font-weight: 400;
 }
