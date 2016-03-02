@@ -1,0 +1,22 @@
+@import "~_styles/constants.scss";
+
+.content {
+  width: g__width(8);
+}
+
+.content-title {
+  @include font__style_h4;
+  width: 100%;
+  border-bottom: 1px solid $pl__grey;
+  padding-bottom: g();
+}
+
+.content-section {
+  margin-top: g(11);
+}
+
+.submit-section {
+  margin-top: g(19);
+  display: flex;
+  justify-content: flex-end;
+}

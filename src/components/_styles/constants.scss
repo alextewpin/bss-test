@@ -63,6 +63,14 @@ $font__lh: 1.2em;
   line-height: $font__lh;
 }
 
+// Utils
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder {@content}
+  &::-moz-placeholder {@content}
+  &:-ms-input-placeholder {@content}
+}
+
 // Other
 @mixin dots {
   background-image: linear-gradient(to right, $pl__grey_d 16.666666%, transparent 0%);

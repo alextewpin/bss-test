@@ -6,13 +6,13 @@ function Transaction ({ type, title, amount, currency, action, date }) {
   let _title;
   let _amount;
   let _amountStyleName;
-  let _additional;
+  let _extra;
   switch (type) {
     case 'upcoming':
       _title = title;
       _amount = `${formatCurrency(amount)} ${getCurrencySymbol(currency)}`;
       _amountStyleName = `amount_style_upcoming`;
-      _additional = `${action} до ${formatDate(date)}`;
+      _extra = `${action} до ${formatDate(date)}`;
       break;
     case 'last':
       _title = formatDate(date);
@@ -22,7 +22,7 @@ function Transaction ({ type, title, amount, currency, action, date }) {
       } else {
         _amountStyleName = `amount_style_minus`;
       }
-      _additional = title;
+      _extra = title;
       break;
     default:
   }
@@ -33,7 +33,7 @@ function Transaction ({ type, title, amount, currency, action, date }) {
         <div styleName='dots'>&nbsp;</div>
         <div styleName={_amountStyleName}>{_amount}</div>
       </div>
-      <div styleName='additional'>{_additional}</div>
+      <div styleName='extra'>{_extra}</div>
     </div>
   );
 }

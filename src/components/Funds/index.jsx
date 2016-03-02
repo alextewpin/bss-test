@@ -2,7 +2,7 @@ import { formatCurrency, getCurrencySymbol } from '_utils/common';
 
 import styles from './funds.scss';
 
-function Funds ({ fundsWhole, fundsFractional, currency }) {
+function Funds ({ funds, fundsFractional, currency }) {
   return (
     <div styleName='root'>
       <div styleName='header'>
@@ -13,7 +13,7 @@ function Funds ({ fundsWhole, fundsFractional, currency }) {
         </a>
       </div>
       <div styleName='funds'>
-        <span styleName='funds-whole'>{formatCurrency(fundsWhole)}.</span>
+        <span styleName='funds-whole'>{formatCurrency(funds)}.</span>
         <span styleName='funds-fractional'>{fundsFractional}</span>
         <span styleName='currency'>&nbsp;{getCurrencySymbol(currency)}</span>
       </div>

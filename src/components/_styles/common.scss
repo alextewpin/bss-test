@@ -19,6 +19,6 @@ a {
   color: $pl__black;
 }
 
-input {
+input, textarea, button {
   @include font__style_body;
 }

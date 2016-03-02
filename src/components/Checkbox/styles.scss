@@ -1,0 +1,39 @@
+@import "~_styles/constants.scss";
+
+.root {
+  display: flex;
+}
+
+.checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+@mixin checkbox {
+  width: g(4);
+  height: g(4);
+  color: $pl__white;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-right: g(4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-check_is-checked_ {
+  &true {
+    @include checkbox;
+    background-color: $pl__primary;
+  }
+  &false {
+    @include checkbox;
+    background-color: $pl__grey_d;
+  }
+}
+
+.checkbox-icon {
+  font-size: 9px;
+  line-height: 1em;
+}

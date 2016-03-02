@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const COMPONENTS_PATH = __dirname + '/src/components/';
 const isDev = () => NODE_ENV === 'development';
 
 module.exports = {
@@ -28,7 +29,7 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
-        'css?modules&importLoaders=1&localIdentName=[name]__[local]!postcss!sass')
+        'css?modules&importLoaders=1&localIdentName=[path]-[local]&context=' + COMPONENTS_PATH + '!postcss!sass')
     }, {
       test: /\.html$/,
       loader: 'file?name=[name].[ext]'
@@ -38,12 +39,11 @@ module.exports = {
     }]
   },
   watch: isDev(),
-  devtool: isDev() ? 'inline-source-maps' : null,
+  devtool: isDev() ? 'source-map' : null,
   postcss: () => [autoprefixer],
   plugins: [
     new webpack.ProvidePlugin({
       React: 'react',
-      ReactDOM: 'react-dom',
       ReactCSS: 'react-css-modules'
     }),
     new ExtractTextPlugin('main.css')

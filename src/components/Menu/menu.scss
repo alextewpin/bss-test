@@ -1,0 +1,29 @@
+@import "~_styles/constants.scss";
+
+.root {
+  width: g__width(3);
+  padding-right: g__width(1) + $g__gutter;
+}
+
+.title {
+  @include font__style_h3;
+  font-weight: 400;
+}
+
+.list {
+  margin-top: g(12);
+}
+
+%item {
+  margin-top: g(3);
+}
+
+.item_is-selected_ {
+  &true {
+    @extend %item;
+    font-weight: 400;
+  }
+  &false {
+    @extend %item;
+  }
+}

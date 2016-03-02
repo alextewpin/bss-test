@@ -19,6 +19,7 @@
 }
 
 .input-from, .input-to {
+  @include font__style_h4;
   width: 100%;
   border-radius: 5px;
   padding-left: g(4);

@@ -1,0 +1,111 @@
+@import "~_styles/constants.scss";
+
+
+.root_is-part-of-group_ {
+  &true {
+    margin-left: g(8);
+  }
+  &false {
+    margin-top: g(7);
+  }
+}
+
+.star {
+  color: $pl__secondary;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currency-selector {
+  display: flex;
+}
+
+@mixin currency {
+  @include font__style_note;
+  &:not(:last-child) {
+    margin-right: g(3);
+  }
+}
+
+.currency_is-selected_ {
+  &true {
+    @include currency;
+  }
+  &false {
+    @include currency;
+    cursor: pointer;
+    color: $pl__primary;
+    text-decoration: underline;
+  }
+}
+
+@mixin input {
+  display: flex;
+  align-items: flex-end;
+  padding: 2px 0px;
+  width: 100%;
+  border-bottom: 1px solid $pl__grey;
+}
+
+.input_is-part-of-group_ {
+  &true {
+    @include input;
+    margin-top: g();
+  }
+  &false {
+    @include input;
+    margin-top: g(2);
+  }
+}
+
+@mixin input-field {
+  @include font__style_h4;
+  font-weight: 400;
+  flex-basis: 100%;
+  padding-right: g(2);
+  @include placeholder {
+    @include font__style_h4;
+    font-weight: 100;
+  }
+}
+
+.input-field_size_ {
+  &m {
+    @include input-field;
+    padding-top: g();
+  }
+  &l {
+    @include input-field;
+    font-size: 28px;
+    line-height: $font__lh;
+  }
+}
+
+.extra {
+  @include font__style_note;
+  flex-shrink: 0;
+  color: $pl__primary;
+  cursor: pointer;
+}
+
+.conversion {
+  @include font__style_note;
+  margin-top: g(2);
+  display: flex;
+  justify-content: space-between;
+}
+
+.conversion-commission {
+  margin-top: g(2);
+}
+
+.conversion-rate, .conversion-amount {
+  font-weight: 300;
+}
+
+.conversion-rate-fractional, .conversion-amount-fractional {
+  @include font__style_small_note;
+}

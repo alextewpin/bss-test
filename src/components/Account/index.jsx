@@ -15,13 +15,13 @@ function Account (
     depositDescription,
     depositDate
   }) {
-  let additionalText = null;
+  let _extra;
   if (cardType && cardLastDigits) {
-    additionalText = `${cardType} *${cardLastDigits}`;
+    _extra = `${cardType} *${cardLastDigits}`;
   } else if (accountFirstDigits && accountLastDigits) {
-    additionalText = `${accountFirstDigits} ... ${accountLastDigits}`;
+    _extra = `${accountFirstDigits} ... ${accountLastDigits}`;
   } else if (depositDescription && depositDate) {
-    additionalText = `${depositDescription} до ${formatDate(depositDate)}`;
+    _extra = `${depositDescription} до ${formatDate(depositDate)}`;
   }
 
   return (
@@ -31,7 +31,7 @@ function Account (
         <div styleName='dots'>&nbsp;</div>
         <div styleName='funds'>{formatCurrency(funds)} {getCurrencySymbol(currency)}</div>
       </div>
-      <div styleName='additional'>{additionalText}</div>
+      <div styleName='extra'>{_extra}</div>
       {(() => {
         if (cardLastOperation) {
           return (

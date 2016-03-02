@@ -1,0 +1,50 @@
+@import "~_styles/constants.scss";
+
+.card {
+  margin-top: g(2);
+}
+
+.card-status {
+  width: g(2);
+  height: g(2);
+  margin: 0px g(2) 0px g();
+  border-radius: 50%;
+  background-color: $pl__secondary;
+}
+
+.card-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.card-title {
+  @include font__style_h4;
+  margin-right: g(3);
+}
+
+.card-change {
+  @include font__style_note;
+  text-decoration: underline;
+  color: $pl__primary;
+  cursor: pointer;
+}
+
+.card-amount {
+  @include font__style_h2;
+}
+
+.card-amount-fractional {
+  @include font__style_body;
+  font-weight: 400;
+}
+
+.card-extra {
+  @include font__style_note;
+  margin-left: g(5);
+}
