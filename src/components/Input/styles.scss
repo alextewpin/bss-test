@@ -62,25 +62,30 @@
 }
 
 @mixin input-field {
-  @include font__style_h4;
-  font-weight: 400;
   flex-basis: 100%;
   padding-right: g(2);
-  @include placeholder {
-    @include font__style_h4;
-    font-weight: 100;
-  }
+  font-weight: 400;
 }
 
 .input-field_size_ {
   &m {
     @include input-field;
+    @include font__style_h4;
+    @include placeholder {
+      @include font__style_h4;
+      font-weight: 100;
+    }
     padding-top: g();
   }
   &l {
     @include input-field;
     font-size: 28px;
     line-height: $font__lh;
+    @include placeholder {
+      font-size: 28px;
+      font-weight: 100;
+      line-height: $font__lh;
+    }
   }
 }
 
