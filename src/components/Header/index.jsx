@@ -1,4 +1,4 @@
-import styles from './header.scss';
+import styles from './styles.scss';
 
 function Header ({ userFirstName, userLastName, userPhoto, nextPayment }) {
   return (

@@ -20,22 +20,22 @@
   line-height: g(6);
 }
 
-%amount {
+@mixin amount {
   flex-shrink: 0;
   line-height: g(6);
 }
 
 .amount_style_ {
   &plus {
-    @extend %amount;
+    @include amount;
     color: $pl__secondary;
   }
   &minus {
-    @extend %amount;
+    @include amount;
     color: $pl__tetriary;
   }
   &upcoming {
-    @extend %amount;
+    @include amount;
     color: $pl__primary;
   }
 }

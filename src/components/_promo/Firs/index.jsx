@@ -1,4 +1,4 @@
-import styles from './firs.scss';
+import styles from './styles.scss';
 
 function Firs () {
   return (

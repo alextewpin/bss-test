@@ -1,4 +1,4 @@
-import styles from './transfer.scss';
+import styles from './styles.scss';
 
 function Transfer () {
   return (

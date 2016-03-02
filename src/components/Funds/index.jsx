@@ -1,6 +1,6 @@
 import { formatCurrency, getCurrencySymbol } from '_utils/common';
 
-import styles from './funds.scss';
+import styles from './styles.scss';
 
 function Funds ({ funds, fundsFractional, currency }) {
   return (

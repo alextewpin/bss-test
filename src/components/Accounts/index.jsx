@@ -1,6 +1,6 @@
 import Account from 'Account';
 
-import styles from './accounts.scss';
+import styles from './styles.scss';
 
 function Accounts ({ title, items }) {
   return (

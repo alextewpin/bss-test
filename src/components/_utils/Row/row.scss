@@ -1,6 +1,6 @@
 @import "~_styles/constants.scss";
 
-%root {
+@mixin root {
   display: flex;
   margin: 0px $g__margin;
   &>*:not(:last-child) {
@@ -8,12 +8,13 @@
   }
 }
 
-.root_margin_m {
-  @extend %root;
-  margin-top: g(10);
-}
-
-.root_margin_l {
-  @extend %root;
-  margin-top: g(15);
+.root_margin_ {
+  &m {
+    @include root;
+    margin-top: g(10);
+  }
+  &l {
+    @include root;
+    margin-top: g(15);
+  }
 }

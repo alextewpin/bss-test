@@ -1,4 +1,4 @@
-import styles from './support.scss';
+import styles from './styles.scss';
 
 export default function Support ({ newMessages }) {
   return (

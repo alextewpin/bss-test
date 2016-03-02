@@ -1,6 +1,6 @@
 import Transaction from 'Transaction';
 
-import styles from './transactions.scss';
+import styles from './styles.scss';
 
 function Transactions ({ title, items, type, width = 'full' }) {
   return (

@@ -1,6 +1,6 @@
 import { formatCurrency, formatDate, getCurrencySymbol } from '_utils/common';
 
-import styles from './account.scss';
+import styles from './styles.scss';
 
 function Account (
   {

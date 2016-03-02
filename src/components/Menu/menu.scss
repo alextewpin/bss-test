@@ -14,16 +14,16 @@
   margin-top: g(12);
 }
 
-%item {
+@mixin item {
   margin-top: g(3);
 }
 
 .item_is-selected_ {
   &true {
-    @extend %item;
+    @include item;
     font-weight: 400;
   }
   &false {
-    @extend %item;
+    @include item;
   }
 }
