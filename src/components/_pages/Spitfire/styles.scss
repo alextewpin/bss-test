@@ -1,0 +1,45 @@
+@import "~_styles/constants.scss";
+
+.root {
+  display: flex;
+  height: 100%;
+}
+
+.input {
+  width: 20%;
+  border-right: 1px solid $pl__grey_d;
+}
+
+.output {
+  width: 1024px;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.emoji {
+  font-family: 'Helvetica Neue', 'Segoe';
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.input-header {
+  @include font__style_h2;
+  text-align: center;
+  margin-top: g(6);
+  flex-shrink: 0;
+}
+
+.input-textarea {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: $font__lh;
+  height: 100%;
+  padding: g(3);
+  margin-top: g(2);
+  box-sizing: border-box;
+  resize: none;
+}

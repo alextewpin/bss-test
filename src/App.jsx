@@ -14,8 +14,7 @@ export default function App ({ children }) {
         userLastName='Тюпин'
         userPhoto=''
         nextPayment='Не забыть заплатить за садик'/>
-      <Nav
-        items={['Карты', 'Счета', 'Кредиты', 'Вклады', 'Платежи', 'Переводы', 'Выход']}/>
+      <Nav/>
       <Transfer/>
       {children}
       <Footer/>

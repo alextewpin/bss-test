@@ -1,6 +1,6 @@
 import styles from './styles.scss';
 
-function Nav ({ items }) {
+function Nav ({ items = ['Карты', 'Счета', 'Кредиты', 'Вклады', 'Платежи', 'Переводы', 'Выход'] }) {
   return (
     <div styleName='root'>
       {items.map((item, i) => {
