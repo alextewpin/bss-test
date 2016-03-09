@@ -1,0 +1,15 @@
+@import "~_styles/constants.scss";
+
+.stub {
+  @include font__style_h2;
+  text-align: center;
+  padding: g(3);
+  background-color: $pl__grey_l;
+  border: 2px dotted $pl__grey_d;
+}
+
+.error {
+  @include font__style_h2;
+  text-align: center;
+  padding: 40vh g(5) 0px g(5);
+}

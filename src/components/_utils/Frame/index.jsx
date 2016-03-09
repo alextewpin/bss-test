@@ -1,9 +1,11 @@
-import ReactDOM from 'react-dom';
+import ReactDOM      from 'react-dom';
 
-import Header    from 'Header';
-import Nav       from 'Nav';
-import Transfer  from 'Transfer';
-import Footer    from 'Footer';
+import { isSafari }  from '_utils/common';
+
+import Header        from 'Header';
+import Nav           from 'Nav';
+import Transfer      from 'Transfer';
+import Footer        from 'Footer';
 
 import Menu          from 'Menu';
 import CardSelector  from 'CardSelector';
@@ -14,6 +16,8 @@ import Button        from 'Button';
 
 import Layout        from '_utils/Layout';
 import Row           from '_utils/Row';
+
+import styles        from './styles.scss';
 
 const lib = {
   Header,
@@ -44,16 +48,23 @@ const data = {
   ]
 };
 
-export default class Spitfire extends React.Component {
+class Spitfire extends React.Component {
   componentDidMount () {
     this.renderFrameContents();
   }
   componentDidUpdate () {
     this.renderFrameContents();
   }
+  componentWillUnmount () {
+    ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).contentDocument.body);
+  }
   createReactElement (item, props) {
     if (typeof item === 'string') {
-      return React.createElement(lib[item], props);
+      if (lib[item]) {
+        return React.createElement(lib[item], props);
+      } else {
+        return <div className={styles.stub}>{item}</div>;
+      }
     } else {
       const children = item.children.map((child, i) => {
         return (
@@ -73,16 +84,25 @@ export default class Spitfire extends React.Component {
       'main.css'
     ];
     if (doc.readyState === 'complete') {
-      const container = document.createElement('div');
-      container.id = 'app';
-      doc.body.appendChild(container);
-      ReactDOM.render(this.createReactElement(data), container);
-      cssLinks.forEach(link => {
-        const linkTag = document.createElement('link');
-        linkTag.rel = 'stylesheet';
-        linkTag.href = link;
-        doc.head.appendChild(linkTag);
-      });
+      if (!doc.getElementById('app')) {
+        const container = doc.createElement('div');
+        container.id = 'app';
+        doc.body.appendChild(container);
+        cssLinks.forEach(link => {
+          const linkTag = document.createElement('link');
+          linkTag.rel = 'stylesheet';
+          linkTag.href = link;
+          doc.head.appendChild(linkTag);
+        });
+      }
+      const container = doc.getElementById('app');
+      let renderedElement;
+      if (isSafari()) {
+        renderedElement = <div className={styles.error}>В Сафари пока ничего не работает. Попробуйте Хром.</div>;
+      } else {
+        renderedElement = this.createReactElement(this.props.data);
+      }
+      ReactDOM.render(renderedElement, container);
     } else {
       setTimeout(this.renderFrameContents, 0);
     }
@@ -93,3 +113,5 @@ export default class Spitfire extends React.Component {
     );
   }
 }
+
+export default ReactCSS(Spitfire, styles);
