@@ -1,13 +1,6 @@
 import styles from './styles.scss';
 
-function Input ({ type, title, value, placeholder, extra, isPartOfGroup = false }) {
-  let _placeholder;
-  if (!placeholder) {
-    _placeholder = `Введите ${title}`;
-  } else {
-    _placeholder = placeholder;
-  }
-
+function Input ({ type, title = 'Инпут', value, placeholder = 'Введите значение', extra, isPartOfGroup = false }) {
   let _content;
   const _inputStyleName = `input_is-part-of-group_${isPartOfGroup}`;
   switch (type) {
@@ -55,7 +48,7 @@ function Input ({ type, title, value, placeholder, extra, isPartOfGroup = false 
             }
           })()}
           <div styleName={_inputStyleName}>
-            <input styleName='input-field_size_m' placeholder={_placeholder} defaultValue={value}/>
+            <input styleName='input-field_size_m' placeholder={placeholder} defaultValue={value}/>
             <div styleName='extra'>{extra}</div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import styles from './styles.scss';
 
-function Header ({ userFirstName, userLastName, userPhoto, nextPayment }) {
+function Header ({ userFirstName = 'Александр', userLastName = 'Тюпин', userPhoto, nextPayment = 'Следующий платеж' }) {
   return (
     <div styleName='root'>
       <div styleName='user'>

@@ -1,11 +1,23 @@
 @import "~_styles/constants.scss";
 
 .stub {
-  @include font__style_h2;
-  text-align: center;
   padding: g(3);
   background-color: $pl__grey_l;
   border: 2px dotted $pl__grey_d;
+  &:not(:first-child) {
+    margin-top: g(5);
+  }
+  &__title {
+    @include font__style_h2;
+    text-align: center;
+  }
+  &__children {
+    margin-top: g(5);
+  }
+}
+
+.group {
+  width: 100%;
 }
 
 .error {

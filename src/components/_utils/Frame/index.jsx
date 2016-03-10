@@ -6,8 +6,8 @@ import Header        from 'Header';
 import Nav           from 'Nav';
 import Transfer      from 'Transfer';
 import Footer        from 'Footer';
-
 import Menu          from 'Menu';
+
 import CardSelector  from 'CardSelector';
 import Input         from 'Input';
 import Textarea      from 'Textarea';
@@ -19,33 +19,41 @@ import Row           from '_utils/Row';
 
 import styles        from './styles.scss';
 
+function Group ({ children }) {
+  return <div className={styles.group}>{children}</div>;
+}
+
+function Stub ({ title }) {
+  return <div className={styles.stub}><div className={styles.stub__title}>{title}</div></div>;
+}
+
+function StubWithChildren ({ title, children }) {
+  const _children = (children.length > 0) ? <div className={styles.stub__children}>{children}</div> : null;
+  return (
+    <div className={styles.stub}>
+      <div className={styles.stub__title}>{title}</div>
+      {_children}
+    </div>
+  );
+}
+
 const lib = {
+  // General
   Header,
   Nav,
   Transfer,
   Footer,
+  Menu,
+  // Forms
+  Button,
+  CardSelector,
   Checkbox,
   Input,
+  Textarea,
+  // Layout
   Row,
-  Layout
-};
-
-const data = {
-  element: 'Layout',
-  children: [
-    'Header',
-    'Nav',
-    'Transfer',
-    {
-      element: 'Row',
-      children: [
-        'Input',
-        'Input'
-      ]
-    },
-    'Checkbox',
-    'Footer'
-  ]
+  Layout,
+  g: Group
 };
 
 class Spitfire extends React.Component {
@@ -60,20 +68,20 @@ class Spitfire extends React.Component {
   }
   createReactElement (item, props) {
     if (typeof item === 'string') {
-      if (lib[item]) {
+      if (lib[item] && item !== 'g') {
         return React.createElement(lib[item], props);
       } else {
-        return <div className={styles.stub}>{item}</div>;
+        return <Stub title={item} {...props}/>;
       }
     } else {
       const children = item.children.map((child, i) => {
-        return (
-          <div key={i}>
-            {this.createReactElement(child)}
-          </div>
-        );
+        return this.createReactElement(child, { key: i });
       });
-      return React.createElement(lib[item.element], { children });
+      if (lib[item.element]) {
+        return React.createElement(lib[item.element], Object.assign({}, { children }, props));
+      } else {
+        return <StubWithChildren title={item.element} children={children} {...props}/>;
+      }
     }
   }
   renderFrameContents () {

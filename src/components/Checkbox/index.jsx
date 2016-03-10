@@ -1,6 +1,6 @@
 import styles from './styles.scss';
 
-function Checkbox ({ title, isChecked = false }) {
+function Checkbox ({ title = 'Чекбокс', isChecked = false }) {
   return (
     <div styleName='root'>
       <div styleName='checkbox'>
