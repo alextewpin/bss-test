@@ -57,6 +57,9 @@ const lib = {
 };
 
 class Spitfire extends React.Component {
+  static propTypes = {
+    data: React.PropTypes.object
+  }
   componentDidMount () {
     this.renderFrameContents();
   }

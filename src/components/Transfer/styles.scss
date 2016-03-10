@@ -2,23 +2,24 @@
 
 .root {
   margin: g(5) $g__margin g(10) $g__margin;
-  padding: 0px g(4);
+  padding: 0 g(4);
   background-color: $pl__primary;
   border-radius: g(2);
   display: flex;
   align-items: center;
-  box-shadow: 0px 0px 2px 0px rgba(151,151,151,0.50);
+  box-shadow: 0 0 2px 0 rgba(151, 151, 151, 0.5);
 }
 
 .input {
   display: flex;
   height: g(10);
-  padding: g(4) 0px;
+  padding: g(4) 0;
   flex-basis: 50%;
   position: relative;
 }
 
-.input-from, .input-to {
+.input-from,
+.input-to {
   @include font__style_h4;
   width: 100%;
   border-radius: 5px;
@@ -33,7 +34,8 @@
   padding-right: g(4) + (2 * g(4)) + g(3) + g(4);
 }
 
-.separator, .submit {
+.separator,
+.submit {
   color: $pl__white;
   flex-shrink: 0;
 }
@@ -47,18 +49,20 @@
   height: g(10) + (2 * g(4));
 }
 
-.icons-from, .icons-to {
+.icons-from,
+.icons-to {
   bottom: 10px + g(4);
   right: g(4);
   position: absolute;
   display: flex;
   align-items: flex-end;
-  &>:not(:last-child) {
+  & > :not(:last-child) {
     margin-right: g(3);
   }
 }
 
-.icon-more, .icon-mic {
+.icon-more,
+.icon-mic {
   display: block;
   text-align: center;
 }
@@ -75,7 +79,7 @@
 .icon-mic {
   width: 12px;
   height: 19px;
-  margin: 1px 2px 0px 2px;
+  margin: 1px 2px 0 2px;
   background-image: url("./mic.png");
   background-size: 100%;
 }
@@ -83,7 +87,7 @@
 .submit {
   width: 15px;
   height: 26px;
-  margin: 0px g() 0px g(5);
+  margin: 0 g() 0 g(5);
   background-image: url("./submit.png");
   background-size: 100%;
 }

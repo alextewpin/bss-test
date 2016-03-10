@@ -18,7 +18,7 @@
   width: g(10);
   height: g(10);
   border-radius: 50%;
-  margin: 0px auto;
+  margin: 0 auto;
   background-color: $pl__primary;
   display: flex;
   align-items: center;
@@ -43,5 +43,5 @@
   text-align: center;
   color: $pl__white;
   border-radius: 50%;
-  background-color: red;
+  background-color: $pl__tetriary;
 }

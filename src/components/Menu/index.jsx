@@ -1,4 +1,4 @@
-import styles from './menu.scss';
+import styles from './styles.scss';
 
 const defaultMenuItems = [
   {

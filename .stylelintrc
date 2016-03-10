@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignore": ["after-comment", "all-nested"]
+      }
+    ],
+    "color-hex-case": "upper",
+    "color-named": "never",
+    "font-family-name-quotes": "double-unless-keyword"
+  }
+}

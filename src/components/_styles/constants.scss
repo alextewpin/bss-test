@@ -23,7 +23,7 @@ $pl__grey: #E3E3E3;
 $pl__grey_l: #F6F6F6;
 
 $pl__black: #000;
-$pl__white: #fff;
+$pl__white: #FFF;
 
 // Fonts
 $font__lh: 1.2em;
@@ -64,12 +64,22 @@ $font__lh: 1.2em;
 }
 
 // Utils
+/* stylelint-disable */
 @mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder {@content}
-  &::-moz-placeholder {@content}
-  &:-ms-input-placeholder {@content}
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
 }
+/* stylelint-enable */
 
 // Other
 @mixin dots {
@@ -77,5 +87,5 @@ $font__lh: 1.2em;
   background-size: 6px 1px;
   background-repeat: repeat-x;
   width: 100%;
-  margin: 0px g(2);
+  margin: 0 g(2);
 }

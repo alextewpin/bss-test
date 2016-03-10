@@ -1,6 +1,5 @@
 @import "~_styles/constants.scss";
 
-
 .root_is-part-of-group_ {
   &true {
     margin-left: g(8);
@@ -45,7 +44,7 @@
 @mixin input {
   display: flex;
   align-items: flex-end;
-  padding: 2px 0px;
+  padding: 2px 0;
   width: 100%;
   border-bottom: 1px solid $pl__grey;
 }
@@ -69,23 +68,23 @@
 
 .input-field_size_ {
   &m {
-    @include input-field;
-    @include font__style_h4;
     @include placeholder {
       @include font__style_h4;
       font-weight: 100;
     }
+    @include input-field;
+    @include font__style_h4;
     padding-top: g();
   }
   &l {
-    @include input-field;
-    font-size: 28px;
-    line-height: $font__lh;
     @include placeholder {
       font-size: 28px;
       font-weight: 100;
       line-height: $font__lh;
     }
+    @include input-field;
+    font-size: 28px;
+    line-height: $font__lh;
   }
 }
 
@@ -107,10 +106,12 @@
   margin-top: g(2);
 }
 
-.conversion-rate, .conversion-amount {
+.conversion-rate,
+.conversion-amount {
   font-weight: 300;
 }
 
-.conversion-rate-fractional, .conversion-amount-fractional {
+.conversion-rate-fractional,
+.conversion-amount-fractional {
   @include font__style_small_note;
 }

@@ -2,7 +2,7 @@ import styles from './styles.scss';
 
 import Frame from '_utils/Frame';
 
-const defaultData = 'Header\nTransfer\nRow\nMenu\ng\nЗаголовок страницы\nInput\nInput\nЗаголовок блока\nКонтейнер\nCheckbox\nCheckbox\n/Контейнер\nButton\n/g\n/Row\nFooter';
+const defaultData = 'Header\nTransfer\nRow\nMenu\ng\nЗаголовок страницы\nInput\nInput\nЗаголовок блока\nКонтейнер\nCheckbox\nCheckbox\n/Контейнер\nButton\n/g\n/Row\nFooter'; // eslint-disable-line max-len
 
 class Spitfire extends React.Component {
   constructor (props) {

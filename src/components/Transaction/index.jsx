@@ -1,6 +1,6 @@
 import { formatCurrency, formatDate, getCurrencySymbol } from '_utils/common';
 
-import styles from './transaction.scss';
+import styles from './styles.scss';
 
 function Transaction ({ type, title, amount, currency, action, date }) {
   let _title;

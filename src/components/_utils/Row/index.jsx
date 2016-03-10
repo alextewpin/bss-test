@@ -1,4 +1,4 @@
-import styles from './row.scss';
+import styles from './styles.scss';
 
 export default function Row ({ margin = 'm', children }) {
   return (

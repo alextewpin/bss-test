@@ -2,7 +2,7 @@
 
 .root {
   @include font__style_h4;
-  padding: 0px g(4);
+  padding: 0 g(4);
   height: g(10);
   color: $pl__white;
   background-color: $pl__primary;

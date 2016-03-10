@@ -2,8 +2,8 @@
 
 @mixin root {
   display: flex;
-  margin: 0px $g__margin;
-  &>*:not(:last-child) {
+  margin: 0 $g__margin;
+  & > *:not(:last-child) {
     margin-right: $g__gutter;
   }
 }

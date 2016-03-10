@@ -3,11 +3,13 @@
 * {
   outline: none;
   border: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
-html, body, :global(#app) {
+html,
+body,
+:global(#app) {
   height: 100%;
 }
 
@@ -23,6 +25,8 @@ a {
   color: $pl__black;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
   @include font__style_body;
 }
