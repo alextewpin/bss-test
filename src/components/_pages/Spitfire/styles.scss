@@ -38,8 +38,7 @@
   font-size: 14px;
   line-height: $font__lh;
   height: 100%;
-  padding: g(3);
-  margin-top: g(2);
-  box-sizing: border-box;
+  margin: g(3);
+  overflow: auto;
   resize: none;
 }

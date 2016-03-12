@@ -1,6 +1,6 @@
 import styles from './styles.scss';
 
-const defaultMenuItems = [
+const defaultItems = [
   {
     title: 'Первый пункт меню',
     isSelected: true
@@ -13,7 +13,7 @@ const defaultMenuItems = [
   }
 ];
 
-function Menu ({ title = 'Меню', items = defaultMenuItems }) {
+function Menu ({ title = 'Меню', items = defaultItems }) {
   return (
     <div styleName={'root'}>
       <div styleName='title'>{title}</div>

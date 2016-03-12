@@ -18,32 +18,40 @@ class Spitfire extends React.Component {
     let childTag = '';
     let childOpenIndex = -1;
     let childCloseIndex = -1;
-    blockArray.forEach((item, i) => {
+    blockArray.some((item, i) => {
       if (item[0] === '/') {
         childTag = item.substring(1);
         childCloseIndex = i;
-      }
-    });
-    blockArray.some((item, i) => {
-      if (item === childTag) {
-        childOpenIndex = i;
         return true;
       }
     });
+    blockArray.forEach((item, i) => {
+      if (item === childTag && i < childCloseIndex) {
+        childOpenIndex = i;
+      }
+    });
+    if (childTag && childOpenIndex === -1) {
+      // console.log(`У парного тега ${childTag} не найдена пара`);
+    }
     return { childTag, childOpenIndex, childCloseIndex };
   }
 
   makeOutputBlock (rawString) {
-    let blockArray = this.makeBlockArrayFromString(rawString);
-    let { childTag, childOpenIndex } = this.getTagPair(blockArray);
-    while (childTag && childOpenIndex >= 0) {
-      blockArray = this.makeTagBlock(blockArray);
-      ({ childTag, childOpenIndex } = this.getTagPair(blockArray));
-    }
+    const blockArray = this.makeTagLayer(this.makeBlockArrayFromString(rawString));
     return {
       element: 'Layout',
       children: blockArray
     };
+  }
+
+  makeTagLayer (blockArray) {
+    let layerBlockArray = blockArray;
+    let { childTag, childOpenIndex } = this.getTagPair(blockArray);
+    while (childTag && childOpenIndex >= 0) {
+      layerBlockArray = this.makeTagBlock(blockArray);
+      ({ childTag, childOpenIndex } = this.getTagPair(blockArray));
+    }
+    return layerBlockArray;
   }
 
   makeBlockArrayFromString (rawString) {
@@ -60,7 +68,7 @@ class Spitfire extends React.Component {
       childBlock.pop();
       const childBlockObject = {
         element: childTag,
-        children: this.makeTagBlock(childBlock)
+        children: this.makeTagLayer(childBlock)
       };
       blockArray.splice(childOpenIndex, 0, childBlockObject);
     }
@@ -82,6 +90,7 @@ class Spitfire extends React.Component {
           </div>
           <textarea
             styleName='input-textarea'
+            wrap='off'
             placeholder='Page layout'
             defaultValue={defaultData}
             onChange={this.handleTextareaChange}/>

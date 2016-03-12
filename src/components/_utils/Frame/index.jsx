@@ -67,7 +67,7 @@ class Spitfire extends React.Component {
     this.renderFrameContents();
   }
   componentWillUnmount () {
-    ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).contentDocument.body);
+    ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).contentDocument.getElementById('app'));
   }
   createReactElement (item, props) {
     if (typeof item === 'string') {
