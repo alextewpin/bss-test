@@ -1,5 +1,4 @@
 {
-  "parser": "babel-eslint",
   "extends": "defaults/configurations/airbnb/es6-react",
   "env": {
     "browser": true,
